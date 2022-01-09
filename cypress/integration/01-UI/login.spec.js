@@ -26,4 +26,5 @@ describe('Verify the Login functionality', () =>{
         //Below code is to Validate if login is unsuccessful with invalid credentials
         cy.get('#welcome').should('be.visible')
     })
+    
 })
