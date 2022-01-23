@@ -14,7 +14,7 @@ describe('Verify the Gorest API', () => {
             method: 'POST',
             url: 'https://gorest.co.in/public/v1/users',
             headers: {
-                Authorization: 'Bearer 8de961031069e831b1984997c3e94e94040d630238a6c635d942416d58eb40bc'
+                Authorization: 'Bearer <generate bearer token and paste here>'
             },
             body: {
                 "name": "Test User",
@@ -33,7 +33,7 @@ describe('Verify the Gorest API', () => {
                     method: 'GET',
                     url: `https://gorest.co.in/public/v1/users/${id}`,
                     headers: {
-                        Authorization: 'Bearer 8de961031069e831b1984997c3e94e94040d630238a6c635d942416d58eb40bc'
+                        Authorization: 'Bearer <generate bearer token and paste here>'
                     }
                 }).then(function (response) {
                     //cy.log(response)
@@ -44,7 +44,7 @@ describe('Verify the Gorest API', () => {
                         method: 'PUT',
                         url: `https://gorest.co.in//public/v1/users/${id}`,
                         headers: {
-                            Authorization: 'Bearer 8de961031069e831b1984997c3e94e94040d630238a6c635d942416d58eb40bc'
+                            Authorization: 'Bearer <generate bearer token and paste here>'
                         },
                         body: {
                             "name": "Test User name",
@@ -61,7 +61,7 @@ describe('Verify the Gorest API', () => {
                             method: 'DELETE',
                             url: `https://gorest.co.in/public/v1/users/${id}`,
                             headers: {
-                                Authorization: 'Bearer 8de961031069e831b1984997c3e94e94040d630238a6c635d942416d58eb40bc'
+                                Authorization: 'Bearer <generate bearer token and paste here>'
                             }
                         }).then(function(response) {
                             //cy.log(response)
