@@ -15,7 +15,11 @@ describe('verfiy the functionality of Dashboard', () => {
         dh.validateDashboardTab()
     })
 
-    it.only('validate the logout functionality', () => {
+    it.only('validate the logout functionality 1', () => {
         dh.validateLogout()
+    })
+
+    it('validate the logout functionality 2', () => {
+        dh.validateLogout2()
     })
 })

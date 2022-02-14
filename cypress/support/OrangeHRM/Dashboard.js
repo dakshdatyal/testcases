@@ -4,7 +4,13 @@ export class Dashboard{
         userName: '#txtUsername',
         password: '#txtPassword',
         loginButton: '#btnLogin',
-        mainMenuUL: '#mainMenuFirstLevelUnorderedList'
+        mainMenuUL: '#mainMenuFirstLevelUnorderedList',
+        empLegend: '#div_legend_pim_employee_distribution_legend',
+        logout: 'a[href="/index.php/auth/logout"]',
+        loginpanelHeading: '#logInPanelHeading',
+        welcomeMenu: '#welcome-menu',
+        activatedWelcome: '#welcome'
+
         
     }
 
@@ -20,17 +26,22 @@ export class Dashboard{
     }
 
     validateDashboardTab() {
-        cy.get('#div_legend_pim_employee_distribution_legend').find('tbody').children().should('have.length', 7)
-        cy.get('#div_legend_pim_employee_distribution_legend').find('tbody').children().eq(5).should('have.text', 'Human Resources')
+        cy.get(this.elements.empLegend).find('tbody').children().should('have.length', 7)
+        cy.get(this.elements.empLegend).find('tbody').children().eq(5).should('have.text', 'Human Resources')
     }
 
     validateLogout() {
-        cy.get('#welcome-menu').find('li').children().last().should('have.text', 'Logout')
+        cy.get(this.elements.welcomeMenu).find('li').children().last().should('have.text', 'Logout')
 
-        cy.get('#welcome').click()
-        cy.contains('Logout').click()
+        cy.get(this.elements.welcomeMenu).click({force: true})
+        cy.contains('Logout').click({force: true})
         cy.url().should('contains', 'index.php/auth')
         
+    }
+
+    validateLogout2() {
+        cy.get(this.elements.logout).click({force: true})
+        cy.get(this.elements.loginpanelHeading).should('have.text','LOGIN Panel')
     }
     
 
