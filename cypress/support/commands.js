@@ -10,6 +10,7 @@
 //
 //
 // -- This is a parent command --
+import 'cypress-file-upload';
  Cypress.Commands.add('login', (userName, password) => 
  {  cy.get('#txtUsername').type(userName)
     cy.get('#txtPassword').type(password)
